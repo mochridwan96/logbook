@@ -11,6 +11,11 @@ import moment from 'moment';
 import { Form, HasError, AlertError } from 'vform'
 window._ = require('lodash');
 
+//import gate class
+import Gate from "./Gate.js";
+//prototype biar bisa di akses di semua frontend/ui Vue
+Vue.prototype.$gate = new Gate(window.user);
+
 
 //sheetalert2
 import swal from 'sweetalert2'
@@ -28,10 +33,13 @@ window.toast = toast;
 
 
 
+
 window.Form = Form;
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
 
+//register vue pagination
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
@@ -93,6 +101,12 @@ Vue.component(
 Vue.component(
     'passport-personal-access-tokens',
     require('./components/passport/PersonalAccessTokens.vue').default
+);
+
+//notfound
+Vue.component(
+    'not-found',
+    require('./components/NotFound.vue').default
 );
 
 

@@ -1,6 +1,6 @@
  <template>
     <div class="container">
-       <div class="row mt-5">
+       <div class="row mt-5" v-if="$gate.isAdminOrAuthor()">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
@@ -27,7 +27,7 @@
                     <th>Registered At</th>
                     <th>Modify</th>
                   </tr>
-                  <tr v-for="user in users" :key="user.id">
+                  <tr v-for="user in users.data" :key="user.id">
                     <td>{{user.id}}</td>
                     <td>{{user.name}}</td>
                     <td>{{user.email}}</td>
@@ -48,9 +48,20 @@
                 </tbody></table>
               </div>
               <!-- /.card-body -->
+
+              <div class="card-footer">
+                  <pagination :data="users" 
+                  @pagination-change-page="getResults"></pagination>
+              </div>
+
+
             </div>
             <!-- /.card -->
           </div>
+        </div>
+
+        <div v-if="!$gate.isAdminOrAuthor()">
+            <not-found></not-found>
         </div>
 
 
@@ -128,6 +139,9 @@
             
 
     </div>
+
+
+
 </template>
 
 <script>
@@ -148,6 +162,12 @@
             }
         },
         methods: {
+            getResults(page = 1) {
+                axios.get('api/user?page=' + page)
+                    .then(response => {
+                        this.users = response.data;
+                    });
+		    },
             updateUser(id){
                 this.$Progress.start();
                 //console.log('Editing data');
@@ -206,8 +226,9 @@
             },
             
             loadUser(){
-
-                axios.get("api/user").then(({data})=>(this.users=data.data));
+                if(this.$gate.isAdminOrAuthor()){
+                    axios.get("api/user").then(({data})=>(this.users=data));
+                }
             },
              createUser(){
                 this.$Progress.start();

@@ -17,7 +17,8 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth:api');
-        //$this->authorize('isAdmin'); 
+        //$this->authorize('isAdmin');
+         
     }
     /**
      * Display a listing of the resource.
@@ -26,8 +27,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $this->authorize('isAdmin');
-        return User::latest()->paginate(10);
+        //$this->authorize('isAdmin');
+        if (\Gate::allows('isAdmin') || \Gate::allows('isAuhtor')) {
+            // The current user can edit settings
+            return User::latest()->paginate(2);
+        }
     }
 
     /**
