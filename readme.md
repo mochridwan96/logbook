@@ -144,3 +144,15 @@ Run php artisan key:generate to generate the app key
 Run npm install
 Run php artisan migrate
 Done !!! Enjoy Customizing and building awesome app
+
+
+
+Heroku Deploy
+heroku config:set VAR_NAME=VAR_VALUE
+heroku config:set APP_LOG=errorlog
+heroku logs
+heroku addons:create heroku-postgresql:hobby-dev
+heroku config | grep HEROKU_POSTGRESQL
+
+First, change the value of 'default' in app/config/database.php to 'pgsql'.git
+git config core.autocrlf true
