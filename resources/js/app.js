@@ -59,6 +59,7 @@ const routes = [
     { path: '/users', component: require('./components/Users.vue').default },
     { path: '/Developer', component: require('./components/Developer.vue').default },
     { path: '/profile', component: require('./components/Profile.vue').default },
+    { path: '*', component: require('./components/NotFound.vue').default },
 ]
 
 const router = new VueRouter({
@@ -128,8 +129,15 @@ const app = new Vue({
         search: ''
     },
     methods:{
+        //if searchit call ,wait for 2second and fire the searching
         searchit: _.debounce(()=>{
+            //console.log("searching.."); 
+            //custom event
             Fire.$emit('searching');
-        },1000)
+
+        },1000),
+        printme(){
+            window.print();
+        }
     }   
 });
