@@ -156,3 +156,40 @@ heroku config | grep HEROKU_POSTGRESQL
 
 First, change the value of 'default' in app/config/database.php to 'pgsql'.git
 git config core.autocrlf true
+
+$ git add .
+$ git commit -m "Convert to use Heroku PostgreSQL database"
+$ git push heroku master
+$ heroku run php /app/artisan migrate
+php artisan passport:install
+
+
+Heroku passport
+Encryption keys generated successfully.
+Personal access client created successfully.
+Client ID: 1
+Client secret: ELWKZHcSLo3Udgf5wVAfwbornkyFfeLNdSrBXkR4
+Password grant client created successfully.
+Client ID: 2
+Client secret: XdcIDLv91D45841ePyLcRIUPR8r63VjtlfYVeVET
+
+SSL Heroku https://devcenter.heroku.com/articles/ssl
+heroku certs:info
+Verify SSL is setup correctly
+curl -vI https://www.example.com
+heroku certs:update server.crt server.key
+heroku certs:remove
+
+Remove SSL:Endpoint Add-on after 24 hours
+heroku addons:destroy ssl
+
+Create the add-on
+This step is only necessary for apps in the Common Runtime. Skip this step for apps in Private Spaces.
+
+Create the add-on with:
+
+heroku addons:create ssl:endpoint
+
+
+/create before
+apt-get install openssl
