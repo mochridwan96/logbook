@@ -23,3 +23,18 @@ Route::apiResources(['user'=>'API\UserController']);
 Route::get('profile','API\UserController@profile');
 Route::get('findUser','API\UserController@search');
 Route::put ('profile','API\UserController@updateProfile');
+
+Route::group([ 'prefix' => 'v1'], function () {
+    Route::group(['middleware' => 'auth:api'], function () {
+
+        Route::group(['prefix' => 'task'], function () {
+            Route::get('/', 'TaskController@index');
+            Route::get('/task-name', 'TaskController@getName');
+            Route::get('/{id}', 'TaskController@getTask');
+            Route::post('/', 'TaskController@create');
+            Route::put('/{id}', 'TaskController@update');
+            Route::delete('/{id}', 'TaskController@delete');
+        });
+
+    });
+});
