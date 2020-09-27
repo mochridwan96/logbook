@@ -42,7 +42,7 @@
                             </thead>
                             <tbody>
                             <tr v-if="log.logs.from == null" >
-                                <th colspan="8">
+                                <th colspan="9">
                                     <center>There are no records to show</center>
                                 </th>
                             </tr>

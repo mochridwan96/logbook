@@ -22,17 +22,17 @@
                 <!-- <not-found></not-found> -->
 
                 <!-- info boxes -->
-                <div class="row">
+                <div class="row" >
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="info-box">
-                            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+                            <span class="info-box-icon bg-info elevation-1"><i class=""></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">TODO</span>
-                                <span class="info-box-number">
-                  10
-                  <small></small>
-                </span>
+                                <span class="info-box-number" v-for="(card, index) in cards" v-if="index == 0">
+                                {{ card.TODO }}
+                                <small></small>
+                                </span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -40,12 +40,12 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+                        <div class="info-box mb-3" >
+                            <span class="info-box-icon bg-warning elevation-1"><i class=""></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">DOING</span>
-                                <span class="info-box-number">Rp. 5.000.000</span>
+                                <span class="info-box-number" v-for="(card, index) in cards" v-if="index ==1">{{ card.DOING }}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -58,11 +58,11 @@
 
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="info-box mb-3">
-                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+                            <span class="info-box-icon bg-danger elevation-1"><i class=""></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">REVIEW</span>
-                                <span class="info-box-number">Rp. 5.000.000</span>
+                                <span class="info-box-number" v-for="(card, index) in cards" v-if="index ==2">{{ card.REVIEW}}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -71,11 +71,11 @@
                     <!-- /.col -->
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+                            <span class="info-box-icon bg-success elevation-1"><i class=""></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">DONE</span>
-                                <span class="info-box-number">Rp. 1.000.000</span>
+                                <span class="info-box-number" v-for="(card, index) in cards" v-if="index ==3">{{ card.DONE}}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -96,6 +96,7 @@
 <script>
 // import MonthlyIncome from ''
 // import VueApexCharts from "apexcharts";
+import { mapState, mapActions, mapMutations } from "vuex";
 export default {
     components: {
         // "apexchart": VueApexCharts,
@@ -106,9 +107,20 @@ export default {
         }
 
     },
+    computed: {
+        ...mapState("dashboard", {
+            cards: state => state.cards
+        }),
+    },
+    methods: {
+        ...mapActions("dashboard", ["getCards"])
+    },
     mounted() {
 
         console.log('Component mounted.')
+    },
+    created() {
+        this.getCards();
     }
 }
 </script>

@@ -45,5 +45,11 @@ Route::group([ 'prefix' => 'v1'], function () {
             Route::delete('/{id}', 'CategoryController@delete');
         });
 
+        Route::group(['prefix' => 'dashboard'], function () {
+            Route::get('/', 'DashboardController@dashboard');
+        });
+
+        
+
     });
 });

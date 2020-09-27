@@ -17,7 +17,7 @@ class TaskController extends Controller
                         ->orderBy('created_at', 'DESC');
         
         if (request()->q != '') {
-            $tasks = $tasks->where('tasks.name', 'LIKE', '%' . request()->q . '%');
+            $tasks = $tasks->where('tasks.description', 'LIKE', '%' . request()->q . '%');
         }
 
         $tasks = $tasks->paginate(10);

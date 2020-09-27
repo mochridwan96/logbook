@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 // import user from "./user.js";
 import log from "./log.js";
+import dashboard from "./dashboard.js";
 
 
 Vue.use(Vuex);
@@ -9,7 +10,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     modules: {
         // user,
-        log
+        log,
+        dashboard
     },
     state: {
         errors: [],
