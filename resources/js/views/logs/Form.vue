@@ -5,6 +5,7 @@
                 <div class="form-group required">
                     <label class="control-label" for>Kategori</label>
                     <select
+                        :disabled="$gate.isManager()"
                         name="no_po"
                         v-model="log.category_id"
                         class="form-control"
@@ -23,6 +24,9 @@
             
         </div>
 
+        <div> 
+        <!-- v-if="log.category_id"> -->
+
        <div class="container card ">
            <div>
                 <div class="row mt-3" >
@@ -30,6 +34,7 @@
                 <div class="form-group required">
                     <label class="control-label" for>Date</label>
                     <input
+                        :disabled="$gate.isManager()"
                         type="date"
                         class="form-control"
                         v-model="log.date"
@@ -44,6 +49,7 @@
                 <div class="form-group required">
                     <label class="control-label">Keterangan</label>
                     <textarea
+                        :disabled="$gate.isManager()"
                         type="text"
                         class="form-control"
                         v-model="log.description"
@@ -60,6 +66,7 @@
                 <div class="form-group required">
                     <label class="control-label" for>No PO</label>
                     <input
+                        :disabled="$gate.isManager()"
                         type="text"
                         class="form-control"
                         v-model="log.no_po"
@@ -74,6 +81,7 @@
                 <div class="form-group required">
                     <label for class="control-label">No IST</label>
                     <input
+                        :disabled="$gate.isManager()"
                         type="text"
                         class="form-control"
                         v-model="log.no_ist"
@@ -87,6 +95,7 @@
                 <div class="form-group required">
                     <label for class="control-label">No Return</label>
                     <input
+                        :disabled="$gate.isManager()"
                         type="text"
                         class="form-control"
                         v-model="log.no_return"
@@ -94,6 +103,34 @@
                         :class="{ 'is-invalid': errors.no_return }"
                     />
                     <p class="text-danger" v-if="errors.no_return">{{ errors.no_return[0] }}</p>
+                </div>
+            </div>
+            <div class="col-md-6"  v-if="log.category_id == 1">
+                <div class="form-group required">
+                    <label for class="control-label">Nama Suplier</label>
+                    <input
+                        :disabled="$gate.isManager()"
+                        type="text"
+                        class="form-control"
+                        v-model="log.suplier_name"
+                        placeholder="Masukan Nama Suplier"
+                        :class="{ 'is-invalid': errors.suplier_name }"
+                    />
+                    <p class="text-danger" v-if="errors.suplier_name">{{ errors.suplier_name[0] }}</p>
+                </div>
+            </div>
+                 <div class="col-md-6"  v-if="log.category_id != 1">
+                <div class="form-group required">
+                    <label for class="control-label">Nama Store</label>
+                    <input
+                        :disabled="$gate.isManager()"
+                        type="text"
+                        class="form-control"
+                        v-model="log.store_name"
+                        placeholder="Masukan Nama Store"
+                        :class="{ 'is-invalid': errors.store_name }"
+                    />
+                    <p class="text-danger" v-if="errors.store_name">{{ errors.store_name[0] }}</p>
                 </div>
             </div>
         </div>
@@ -139,6 +176,7 @@
         </div>
        </div>
 
+        </div>
 
     </div>
 </template>

@@ -23,7 +23,7 @@
 
 <script>
 import { mapActions, mapState, mapMutations } from "vuex";
-import Form from "./Form.vue";
+import Form from "./FormEdit.vue";
 export default {
     data() {
         return {};

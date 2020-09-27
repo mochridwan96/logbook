@@ -1,8 +1,8 @@
  <template>
     <div class="container">
-       <div class="row mt-5" v-if="$gate.isAdminOrAuthor()">
+       <div class="row " v-if="$gate.isAdminOrAuthor()">
           <div class="col-md-12">
-            <div class="card">
+            <div class="card mt-5">
               <div class="card-header">
                 <h3 class="card-title">Users Table</h3>
 

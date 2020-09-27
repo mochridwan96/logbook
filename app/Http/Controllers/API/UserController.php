@@ -30,7 +30,7 @@ class UserController extends Controller
         //$this->authorize('isAdmin');
         if (\Gate::allows('isAdmin') || \Gate::allows('isAuhtor')) {
             // The current user can edit settings
-            return User::latest()->paginate(2);
+            return User::latest()->paginate(10);
         }
     }
 

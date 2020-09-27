@@ -64,6 +64,8 @@ class TaskController extends Controller
             'no_po' => $request->no_po,
             'no_ist' => $request->no_ist,
             'no_return' => $request->no_return,
+            'suplier_name' => $request->suplier_name,
+            'store_name' => $request->store_name,
             'intruction' => $request->intruction,
             'user_id' => $user_login,
             'status' => $request->status  
@@ -87,6 +89,8 @@ class TaskController extends Controller
         $task->no_po        = $request->no_po;
         $task->no_ist       = $request->no_ist;
         $task->no_return    = $request->no_return;
+        $task->suplier_name    = $request->suplier_name;
+        $task->store_name    = $request->store_name;
         $task->intruction   = $request->intruction;
         $task->user_id      = Auth::id();
         $task->status       = $request->status;

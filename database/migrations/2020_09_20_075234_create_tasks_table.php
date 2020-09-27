@@ -21,6 +21,8 @@ class CreateTasksTable extends Migration
             $table->string('no_ist')->nullable();
             $table->string('no_return')->nullable();
             $table->string('intruction')->nullable();
+            $table->string('suplier_name')->nullable();
+            $table->string('store_name')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users'); // ini foreign key ke user atau relasi ke user
             $table->unsignedBigInteger('category_id');

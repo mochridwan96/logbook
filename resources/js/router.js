@@ -27,6 +27,11 @@ const routes = [
         props: true
     },
     {
+        path: "/users",
+        name: "users",
+        component: User,
+    },
+    {
         path: "/logs",
         component: IndexLog,
         // meta: { requiresAuth: true },

@@ -14,6 +14,8 @@ class Task extends Model
         'no_po',
         'no_ist',
         'no_return',
+        'suplier_name',
+        'store_name',
         'intruction',
         'user_id',
         'status'

@@ -14,6 +14,8 @@ export const state = {
         no_po: "",
         no_ist: "",
         no_return: "",
+        suplier_name: "",
+        store_name: "",
         intruction: "",
         user_id: "",
         status: "",
@@ -43,6 +45,8 @@ export const mutations = {
             no_po: payload.no_po,
             no_ist: payload.no_ist,
             no_return: payload.no_return,
+            suplier_name: payload.suplier_name,
+            store_name: payload.store_name,
             intruction: payload.intruction,
             status: payload.status,
         };
@@ -56,6 +60,8 @@ export const mutations = {
             no_po: "",
             no_ist: "",
             no_return: "",
+            suplier_name: "",
+            store_name: "",
             intruction: "",
             status: "",
         };

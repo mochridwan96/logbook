@@ -9,9 +9,14 @@ export default class Gate{
         return this.user.type === 'admin';
     }
 
-    isUser(){
-        return this.user.type === 'user';
+    isEmployee(){
+        return this.user.type === 'employee';
     }
+
+    isManager(){
+        return this.user.type === 'manager';
+    }
+
     isAdminOrAuthor(){
         if(this.user.type === 'admin' || this.user.type === 'author'){
             return true;

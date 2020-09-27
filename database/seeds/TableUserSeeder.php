@@ -32,6 +32,9 @@ class TableUserSeeder extends Seeder
                 'type' => 'employee'
             ]
         ];
-        $user = User::insert($users);        
+        foreach($users as $item) {
+
+            User::create($item);        
+        }
     }
 }

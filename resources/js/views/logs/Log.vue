@@ -30,11 +30,12 @@
                             <thead>
                             <tr>
                                 <th style="width: 10px">#</th>
+                                <th>CATEGORY</th>
                                 <th>DATE</th>
                                 <th>DESCRIPTION</th>
                                 <th>NO PO</th>
                                 <th>NO IST </th>
-                                 <th>INTRUCTION</th>
+                                <th>INTRUCTION</th>
                                 <th>STATUS</th>
                                 <th style="width: 30px">ACTIONS</th>
                             </tr>
@@ -48,6 +49,7 @@
 
                             <tr v-for="log in log.logs.data" :key="log.id">
                                 <td>{{ log.id }}</td>
+                                <td>{{ log.category_name}}</td>
                                 <td>{{ log.date }}</td>
                                 <td>{{ log.description }}</td>
                                 <td>{{ log.no_po}}</td>
