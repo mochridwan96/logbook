@@ -12,11 +12,26 @@ class TableUserSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::create([
-            'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('admin123'),
-            'type' => 'admin'
-        ]);        
+        $users = [
+            [
+                'name' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'password' => bcrypt('admin123'),
+                'type' => 'admin'
+            ],
+            [
+                'name' => 'Manager',
+                'email' => 'manager@gmail.com',
+                'password' => bcrypt('manager123'),
+                'type' => 'manager'
+            ],
+            [
+                'name' => 'Employee',
+                'email' => 'employee@gmail.com',
+                'password' => bcrypt('employee123'),
+                'type' => 'employee'
+            ]
+        ];
+        $user = User::insert($users);        
     }
 }

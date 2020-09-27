@@ -10,6 +10,8 @@ window.Vue = require('vue');
 import moment from 'moment';
 import { Form, HasError, AlertError } from 'vform'
 window._ = require('lodash');
+import router from './router'
+import store from "./store/store.js";
 
 //import gate class
 import Gate from "./Gate.js";
@@ -43,6 +45,14 @@ Vue.component('pagination', require('laravel-vue-pagination'));
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+// Install BootstrapVue
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 //buat progress bar sbelumnya install npm install vue-progressbar
 import VueProgressBar from 'vue-progressbar'
@@ -54,19 +64,19 @@ Vue.use(VueProgressBar, {
 
 
 
-const routes = [
-    { path: '/dashboard', component: require('./components/Dashboard.vue').default },
-    { path: '/users', component: require('./components/Users.vue').default },
-    { path: '/Developer', component: require('./components/Developer.vue').default },
-    { path: '/profile', component: require('./components/Profile.vue').default },
-    { path: '*', component: require('./components/NotFound.vue').default },
-]
+// const routes = [
+//     { path: '/dashboard', component: require('./components/Dashboard.vue').default },
+//     { path: '/users', component: require('./components/Users.vue').default },
+//     { path: '/Developer', component: require('./components/Developer.vue').default },
+//     { path: '/profile', component: require('./components/Profile.vue').default },
+//     { path: '*', component: require('./components/NotFound.vue').default },
+// ]
 
-const router = new VueRouter({
-    mode: 'history',
-    routes // short for `routes: routes`
-
-})
+// const router = new VueRouter({
+//     mode: 'history',
+//     routes // short for `routes: routes`
+//
+// })
 
 Vue.filter('upText', function(text) {
     //return text.toUpperCase();
@@ -124,14 +134,14 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     router,
-
+    store,
     data:{
         search: ''
     },
     methods:{
         //if searchit call ,wait for 2second and fire the searching
         searchit: _.debounce(()=>{
-            //console.log("searching.."); 
+            //console.log("searching..");
             //custom event
             Fire.$emit('searching');
 
@@ -139,5 +149,5 @@ const app = new Vue({
         printme(){
             window.print();
         }
-    }   
+    }
 });

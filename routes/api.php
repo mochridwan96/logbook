@@ -36,5 +36,14 @@ Route::group([ 'prefix' => 'v1'], function () {
             Route::delete('/{id}', 'TaskController@delete');
         });
 
+        Route::group(['prefix' => 'category'], function () {
+            Route::get('/', 'CategoryController@index');
+            Route::get('/category-name', 'CategoryController@getName');
+            Route::get('/{id}', 'CategoryController@getCategory');
+            Route::post('/', 'CategoryController@create');
+            Route::put('/{id}', 'CategoryController@update');
+            Route::delete('/{id}', 'CategoryController@delete');
+        });
+
     });
 });
