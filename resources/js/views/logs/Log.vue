@@ -64,7 +64,7 @@
                                 </td>
 
                                 <td>
-                                    <span v-if="log.user_id == $gate.isIdEmployee() || $gate.isIdAdmin() == 1">
+                                    <span v-if="log.user_id == $gate.isIdEmployee() || $gate.isIdAdmin() == 1 || $gate.isIdManager() == 2 ">
 
                                     <router-link
                                         :to="{ name: 'logs.edit', params: {id: log.id} }">

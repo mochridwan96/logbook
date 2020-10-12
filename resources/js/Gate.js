@@ -27,6 +27,11 @@ export default class Gate{
         return this.user.type === 'manager';
     }
 
+    isIdManager(){
+        const id = this.user.id
+        return  id;
+    }
+
     isAdminOrAuthor(){
         if(this.user.type === 'admin' || this.user.type === 'author'){
             return true;
