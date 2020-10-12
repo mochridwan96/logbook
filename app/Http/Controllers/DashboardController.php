@@ -23,4 +23,18 @@ class DashboardController extends Controller
             'result'  => $cards,
         ], 200);
     }
+
+    public function report()
+    {
+
+        $category = \App\Category::select('name')->pluck('name');
+        
+
+        return response()->json([
+            'status'  => 'success',
+            'code'    => 200,
+            'message' => '',
+            'result'  => $category,
+        ], 200);
+    }
 }

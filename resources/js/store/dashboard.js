@@ -4,12 +4,16 @@ export const namespaced = true;
 
 export const state = {
     cards: [],
+    report: [],
     page: 1
 };
 
 export const mutations = {
     ASSIGN_DATA(state, cards) {
         state.cards = cards;
+    },
+    ASSIGN_REPORT(state, report) {
+      state.report = report;
     },
     SET_PAGE(state, payload) {
         state.page = payload;
@@ -53,7 +57,28 @@ export const actions = {
                 // dispatch("notification/add", notification, { root: true });
             });
     });
-},
+  },
+  getReport({ commit, state }, payload) {
+    let search = typeof payload != "undefined" ? payload : "";
+
+    return new Promise((resolve, reject) => {
+        dashboardService.getReport()
+            .then(response => {
+                commit("ASSIGN_REPORT", response.data.result);
+                console.log(response.data.result);
+                resolve(response.data);
+            })
+            .catch(error => {
+                const notification = {
+                    type: "error",
+                    message:
+                        "There was a problem fetching events: " +
+                        error.message
+                };
+                // dispatch("notification/add", notification, { root: true });
+            });
+    });
+    },
     getLogs({ commit, state }, payload) {
         let search = typeof payload != "undefined" ? payload : "";
 

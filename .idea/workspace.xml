@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f60dd2a-21b9-48ac-82e5-74c108754216" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/Add.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/Edit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/Form.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/FormEdit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/Report.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_20_075234_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_20_075234_create_tasks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/log.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/log.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/services/dashboardService.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/services/dashboardService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/logs/Form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/logs/Form.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/logs/Log.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/logs/Log.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,17 +145,20 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/views/reports" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/views/reports" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/js/views" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.watch">
+  <component name="RunManager" selected="PHP Built-in Web Server.serve">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -179,6 +193,8 @@
       <updated>1601157563007</updated>
       <workItem from="1601157574143" duration="11325000" />
       <workItem from="1601207788593" duration="1365000" />
+      <workItem from="1601245936887" duration="32000" />
+      <workItem from="1602497334497" duration="3177000" />
     </task>
     <servers />
   </component>
@@ -202,29 +218,41 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="419" y="239" width="518" height="324" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1366.741@0.27.1366.741" timestamp="1601160320988" />
-    <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601157896436">
+    <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601245968625">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1601157896436" />
-    <state width="1320" height="172" key="GridCell.Tab.0.bottom" timestamp="1601209720732">
-      <screen x="0" y="27" width="1366" height="741" />
+    <state x="466" y="155" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1601245968625" />
+    <state width="1274" height="172" key="GridCell.Tab.0.bottom" timestamp="1602513519429">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
     <state width="1320" height="172" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1601209720732" />
-    <state width="1320" height="172" key="GridCell.Tab.0.center" timestamp="1601209720732">
-      <screen x="0" y="27" width="1366" height="741" />
+    <state width="1274" height="172" key="GridCell.Tab.0.bottom/46.27.1320.741@46.27.1320.741" timestamp="1602513519429" />
+    <state width="1266" height="172" key="GridCell.Tab.0.bottom/54.27.1312.741@54.27.1312.741" timestamp="1602498701177" />
+    <state width="1274" height="172" key="GridCell.Tab.0.center" timestamp="1602513519427">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
     <state width="1320" height="172" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1601209720732" />
-    <state width="1320" height="172" key="GridCell.Tab.0.left" timestamp="1601209720731">
-      <screen x="0" y="27" width="1366" height="741" />
+    <state width="1274" height="172" key="GridCell.Tab.0.center/46.27.1320.741@46.27.1320.741" timestamp="1602513519427" />
+    <state width="1266" height="172" key="GridCell.Tab.0.center/54.27.1312.741@54.27.1312.741" timestamp="1602498701176" />
+    <state width="1274" height="172" key="GridCell.Tab.0.left" timestamp="1602513519426">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
     <state width="1320" height="172" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1601209720731" />
-    <state width="1320" height="172" key="GridCell.Tab.0.right" timestamp="1601209720732">
-      <screen x="0" y="27" width="1366" height="741" />
+    <state width="1274" height="172" key="GridCell.Tab.0.left/46.27.1320.741@46.27.1320.741" timestamp="1602513519426" />
+    <state width="1266" height="172" key="GridCell.Tab.0.left/54.27.1312.741@54.27.1312.741" timestamp="1602498701176" />
+    <state width="1274" height="172" key="GridCell.Tab.0.right" timestamp="1602513519429">
+      <screen x="46" y="27" width="1320" height="741" />
     </state>
     <state width="1320" height="172" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1601209720732" />
+    <state width="1274" height="172" key="GridCell.Tab.0.right/46.27.1320.741@46.27.1320.741" timestamp="1602513519429" />
+    <state width="1266" height="172" key="GridCell.Tab.0.right/54.27.1312.741@54.27.1312.741" timestamp="1602498701177" />
     <state x="205" y="117" width="945" height="568" key="NewPhpClassDialog" timestamp="1601161865077">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="205" y="117" width="945" height="568" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1601161865077" />
+    <state x="397" y="136" width="711" height="522" key="find.popup" timestamp="1602501982633">
+      <screen x="46" y="27" width="1320" height="741" />
+    </state>
+    <state x="397" y="136" width="711" height="522" key="find.popup/46.27.1320.741@46.27.1320.741" timestamp="1602501982632" />
   </component>
 </project>

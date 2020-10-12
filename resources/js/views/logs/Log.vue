@@ -12,7 +12,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">
+
+                        <h3 class="card-title" v-show="!$gate.isManager()" >
                             <router-link :to="{ name: 'logs.add' }" class="btn btn-primary lg">
                                 <i class="fas fa-plus"></i>
                                 Tambah
@@ -50,7 +51,7 @@
                             <tr v-for="log in log.logs.data" :key="log.id">
                                 <td>{{ log.id }}</td>
                                 <td>{{ log.category_name}}</td>
-                                <td>{{ log.date }}</td>
+                                <td>{{ log.date |myDate}}</td>
                                 <td>{{ log.description }}</td>
                                 <td>{{ log.no_po}}</td>
                                 <td>{{ log.no_ist }}</td>
@@ -66,14 +67,13 @@
                                     <router-link
                                         :to="{ name: 'logs.edit', params: {id: log.id} }">
                                         <i class="fa fa-edit blue"></i>
-                                    </router-link>/
-                                    <a href="#" @click="deleteLog(log.id)">
+                                    </router-link>
+                                    <a v-show="!$gate.isManager()"  href="#" @click="deleteLog(log.id)">
                                         <i class="fa fa-trash red"></i>
                                     </a>
                                 </td>
                             </tr>
 
-                            </tr>
                             </tbody>
                         </table>
                     </div>

@@ -113,13 +113,14 @@ export default {
         }),
     },
     methods: {
-        ...mapActions("dashboard", ["getCards"])
+        ...mapActions("dashboard", ["getCards","getReport"])
     },
     mounted() {
 
         console.log('Component mounted.')
     },
     created() {
+        this.getReport();
         this.getCards();
     }
 }

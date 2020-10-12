@@ -13,14 +13,15 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::join('categories', 'tasks.category_id', '=', 'categories.id')
-                        ->select('tasks.*', 'categories.name as category_name')
+                        ->join('users', 'tasks.user_id', 'users.id')
+                        ->select('tasks.*', 'categories.name as category_name', 'users.name as user_name')
                         ->orderBy('created_at', 'DESC');
-        
+
         if (request()->q != '') {
             $tasks = $tasks->where('tasks.description', 'LIKE', '%' . request()->q . '%');
         }
 
-        $tasks = $tasks->paginate(10);
+        $tasks = $tasks->paginate(100);
         return response()->json([
             'status'  => 'success',
             'code'    => 200,
@@ -33,7 +34,7 @@ class TaskController extends Controller
     public function getName()
     {
         $data = Task::select('id','name');
-        
+
         return $data->orderBy('id', 'ASC')->get();
     }
 
@@ -55,8 +56,8 @@ class TaskController extends Controller
         //     'url' => 'required|url|max:255',
         //     'description' => 'required|max:255',
         // ]);
-        
-        $user_login = Auth::id(); 
+
+        $user_login = Auth::id();
         $task = Task::create([
             'date' => $request->date,
             'description' => $request->description,
@@ -68,9 +69,9 @@ class TaskController extends Controller
             'store_name' => $request->store_name,
             'intruction' => $request->intruction,
             'user_id' => $user_login,
-            'status' => $request->status  
+            'status' => $request->status
         ]);
-        
+
         return response()->json([
             'status'  => 'success',
             'code'    => 200,

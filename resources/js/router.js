@@ -11,6 +11,11 @@ import DataLog from "./views/logs/Log.vue";
 import AddLog from "./views/logs/Add.vue";
 import EditLog from "./views/logs/Edit.vue";
 
+import IndexReport from "./views/reports/Index.vue";
+import DataReport from "./views/reports/Report.vue";
+import AddReport from "./views/reports/Add.vue";
+import EditReport from "./views/reports/Edit.vue";
+
 import Profile from "./components/Profile";
 
 import NotFoundComponent from "./components/NotFound";
@@ -50,6 +55,28 @@ const routes = [
                 path: "edit/:id",
                 name: "logs.edit",
                 component: EditLog
+            }
+        ]
+    },
+    {
+        path: "/reports",
+        component: IndexReport,
+        // meta: { requiresAuth: true },
+        children: [
+            {
+                path: "",
+                name: "reports.data",
+                component: DataReport
+            },
+            {
+                path: "add",
+                name: "reports.add",
+                component: AddReport
+            },
+            {
+                path: "edit/:id",
+                name: "reports.edit",
+                component: EditReport
             }
         ]
     },

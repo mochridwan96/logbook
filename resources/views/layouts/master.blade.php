@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>AdminLTE 3 | Starter</title>
+  <title>Aeon Store BSD</title>
 
 
   <link rel="stylesheet" href="/css/app.css">
@@ -84,10 +84,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </router-link>
           </li>
 
-         
+
           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
-            <i class="nav-item fa fa-cogs green"></i>
+            <i class="nav-icon fa fa-cogs green"></i>
               <p>
                 Log Book
                 <i class="right fa fa-angle-left "></i>
@@ -102,9 +102,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
+        <li class="nav-item">
+            <router-link to="/reports" class="nav-link">
+                <i class="nav-icon fa fa-cogs blue" ></i>
+                <p>
+                    Laporan
+                </p>
+            </router-link>
+        </li>
 
 
- @can('isAdmin')
+        @can('isAdmin')
         <li class="nav-item">
             <router-link to="/users" class="nav-link">
                 <i class="nav-icon fas fa-cogs"></i>

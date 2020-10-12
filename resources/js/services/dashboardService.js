@@ -4,6 +4,9 @@ export default {
     getCards(page, search) {
         return $axios.get('/dashboard');
     },
+    getReport(page, search) {
+      return $axios.get('/dashboard/report');
+  },
     getLogs(page, search) {
         return $axios.get(`/task?page=${page}&q=${search}`);
     },
