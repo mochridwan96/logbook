@@ -14,13 +14,13 @@
                 <form action="{{ route('login') }}"method="POST">
                     @csrf
                     <div class="input-group mb-3">
-                        <input id="username" type="username" class="form-control @error('email') is-invalid @enderror" name="username" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Username">
+                        <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus placeholder="Username">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
-                        @error('email')
+                        @error('username')
                         <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
