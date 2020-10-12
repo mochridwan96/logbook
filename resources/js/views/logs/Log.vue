@@ -64,13 +64,21 @@
                                 </td>
 
                                 <td>
+                                    <span v-if="log.user_id == $gate.isIdEmployee() || $gate.isIdAdmin() == 1">
+
                                     <router-link
                                         :to="{ name: 'logs.edit', params: {id: log.id} }">
                                         <i class="fa fa-edit blue"></i>
                                     </router-link>
-                                    <a v-show="!$gate.isManager()"  href="#" @click="deleteLog(log.id)">
-                                        <i class="fa fa-trash red"></i>
-                                    </a>
+                                    </span>
+
+                                    <span v-if="log.user_id == $gate.isIdEmployee() || $gate.isIdAdmin() == 1">
+                                            <a v-show="!$gate.isManager()"  href="#" @click="deleteLog(log.id)">
+                                                <i class="fa fa-trash red"></i>
+                                            </a>
+                                    </span>
+
+
                                 </td>
                             </tr>
 

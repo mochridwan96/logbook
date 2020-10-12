@@ -7,10 +7,10 @@
                 <h3 class="card-title">Users Table</h3>
 
                 <div class="card-tools">
-                    <button class="btn btn-success " @click="newModal">Add New  
+                    <button class="btn btn-success " @click="newModal">Add New
                         <i class="fas fa-user-plus fa-fw " ></i>
                     </button>
-                
+
                 </div>
 
 
@@ -22,7 +22,7 @@
                   <tbody><tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Email</th>
+                    <th>Username</th>
                     <th>Type</th>
                     <th>Registered At</th>
                     <th>Modify</th>
@@ -30,10 +30,10 @@
                   <tr v-for="user in users.data" :key="user.id">
                     <td>{{user.id}}</td>
                     <td>{{user.name}}</td>
-                    <td>{{user.email}}</td>
+                    <td>{{user.username}}</td>
                     <td>{{user.type | upText}}</td>
                     <td>{{user.created_at | myDate}}</td>
-                    
+
                     <td>
                         <a href="#" @click="editModal(user)">
                             <i class="fa fa-edit blue"></i>
@@ -44,13 +44,13 @@
                         </a>
                     </td>
                   </tr>
-                  
+
                 </tbody></table>
               </div>
               <!-- /.card-body -->
 
               <div class="card-footer">
-                  <pagination :data="users" 
+                  <pagination :data="users"
                   @pagination-change-page="getResults"></pagination>
               </div>
 
@@ -77,7 +77,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    
+
                     <form @submit.prevent="editmode ? updateUser() : createUser()">
                     <div class="form-group">
                             <input v-model="form.name" type="text" name="name"
@@ -87,8 +87,8 @@
                     </div>
 
                     <div class="form-group">
-                            <input v-model="form.email" type="text" name="email"
-                                placeholder="Email"
+                            <input v-model="form.username" type="text" name="username"
+                                placeholder="Username"
                                 class="form-control" :class="{ 'is-invalid': form.errors.has('email') }">
                         <has-error :form="form" field="email"></has-error>
                     </div>
@@ -100,19 +100,19 @@
                         <has-error :form="form" field="bio"></has-error>
                     </div>
 
-                    
+
                     <div class="form-group">
-                            <select v-model="form.type" name="type" id="type" 
+                            <select v-model="form.type" name="type" id="type"
                                 class="form-control" :class="{ 'is-invalid': form.errors.has('type') }">
                                 <option value="">Select User Role</option>
                                 <option value="admin">Admin User</option>
-                                <option value="user">Standard User</option>
-                                <option value="author">Author User</option>
+                                <option value="employee">Employee User</option>
+                                <option value="manager">Manager User</option>
                             </select>
                         <has-error :form="form" field="type"></has-error>
                     </div>
 
-                  
+
 
                      <div class="form-group">
                             <input v-model="form.password" name="password" id="password" type="password"
@@ -129,14 +129,14 @@
 
                     </form>
                 </div>
-                
+
 
 
                 </div>
-                
+
             </div>
             </div>
-            
+
 
     </div>
 
@@ -153,7 +153,7 @@
                 form: new Form({
                     id:'',
                     name : '',
-                    email: '',
+                    username: '',
                     password: '',
                     type: '',
                     bio: '',
@@ -187,7 +187,7 @@
                 .catch(()=>{
                     this.$Progress.fail();
                 })
-            }, 
+            },
             editModal(user){
                 this.editmode = true;
                  this.form.reset();
@@ -224,7 +224,7 @@
                          }
                     })
             },
-            
+
             loadUser(){
                 if(this.$gate.isAdminOrAuthor()){
                     axios.get("api/user").then(({data})=>(this.users=data));

@@ -16,7 +16,7 @@
 
 
                         <div class="card-tools">
-
+                            <a href="" @click="print" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
                         </div>
 
                     </div>
@@ -80,6 +80,7 @@
                                 v-if="log.logs.data && log.logs.data.length > 0"
                             ></b-pagination>
                         </div>
+
                     </div>
                     <!-- /.card-footer -->
 
@@ -123,6 +124,9 @@ export default {
         },
     },
     methods: {
+        print() {
+            window.print()
+        },
         clear() {
             // this.getDocumentFilter(this.search);
             this.$store.commit("log/CLEAR_FILTER");

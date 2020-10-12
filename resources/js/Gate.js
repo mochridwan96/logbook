@@ -1,5 +1,5 @@
 export default class Gate{
-    
+
     constructor(user){
         this.user = user;
 
@@ -9,8 +9,18 @@ export default class Gate{
         return this.user.type === 'admin';
     }
 
+    isIdAdmin(){
+        const id = this.user.id
+        return  id;
+    }
+
     isEmployee(){
         return this.user.type === 'employee';
+    }
+
+    isIdEmployee(){
+        const id = this.user.id
+        return  id;
     }
 
     isManager(){

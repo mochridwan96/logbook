@@ -18,7 +18,7 @@ class UserController extends Controller
     {
         $this->middleware('auth:api');
         //$this->authorize('isAdmin');
-         
+
     }
     /**
      * Display a listing of the resource.
@@ -44,12 +44,12 @@ class UserController extends Controller
     {
         $this->validate($request,[
             'name'  => 'required|string|max:191',
-            'email' => 'required|string|email|max:191|unique:users',
+            'username' => 'required|string|max:191|unique:users',
             'password'=>'required|string|min:8'
         ]);
         return User::create([
             'name'      =>   $request['name'],
-            'email'     =>   $request['email'],
+            'username'     =>   $request['username'],
             'type'      =>   $request['type'],
             'bio'      =>   $request['bio'],
             'photo'      =>   $request['photo'],
@@ -88,17 +88,17 @@ class UserController extends Controller
     public function updateProfile(Request $request)
     {
         //return Auth::user();
-        
+
         //take user
         $user = auth('api')->user();
-        
-        
+
+
         $this->validate($request,[
             'name'  => 'required|string|max:191',
             'email' => 'required|string|email|max:191|unique:users,email,'.$user->id,
             'password'=>'sometimes|required|string|min:8'
         ]);
-        
+
         //take current photo
         $currentPhoto = $user->photo;
 
@@ -106,7 +106,7 @@ class UserController extends Controller
         if($request->photo != $currentPhoto){
 
             $name = time().'.' . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ';')))[1])[1];
-            
+
             \Image::make($request->photo)->save(public_path('img/profile/').$name);
             $request->merge(['photo'=>$name]);
 
@@ -118,7 +118,7 @@ class UserController extends Controller
             }
         }
 
-        //check passwrd kalo change encryp 
+        //check passwrd kalo change encryp
         if(!empty($request->password)){
             $request->merge(['password'=>Hash::make($request ['password'])]);
 
@@ -145,7 +145,7 @@ class UserController extends Controller
             'email' => 'required|string|email|max:191|unique:users,email,'.$user->id,
             'password'=>'sometimes|string|min:8'
         ]);
-        
+
         $user->update($request->all());
         return ['message','Update  the user info'];
         //$id;

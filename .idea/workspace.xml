@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f60dd2a-21b9-48ac-82e5-74c108754216" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/Add.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/Edit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/Form.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/FormEdit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/reports/Report.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/95882a52-a7e1-4524-a2ae-a21d649cc35c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/95882a52-a7e1-4524-a2ae-a21d649cc35c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/TableUserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TableUserSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/services/dashboardService.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/services/dashboardService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Gate.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Gate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Users.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Users.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/views/logs/Log.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/logs/Log.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/reports/Report.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/reports/Report.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +189,7 @@
       <workItem from="1601157574143" duration="11325000" />
       <workItem from="1601207788593" duration="1365000" />
       <workItem from="1601245936887" duration="32000" />
-      <workItem from="1602497334497" duration="3177000" />
+      <workItem from="1602497334497" duration="6407000" />
     </task>
     <servers />
   </component>
@@ -250,9 +245,13 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="205" y="117" width="945" height="568" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1601161865077" />
-    <state x="397" y="136" width="711" height="522" key="find.popup" timestamp="1602501982633">
+    <state x="397" y="136" width="711" height="522" key="find.popup" timestamp="1602517591622">
       <screen x="46" y="27" width="1320" height="741" />
     </state>
-    <state x="397" y="136" width="711" height="522" key="find.popup/46.27.1320.741@46.27.1320.741" timestamp="1602501982632" />
+    <state x="397" y="136" width="711" height="522" key="find.popup/46.27.1320.741@46.27.1320.741" timestamp="1602517591622" />
+    <state x="370" y="174" key="run.anything.popup" timestamp="1602515323362">
+      <screen x="46" y="27" width="1320" height="741" />
+    </state>
+    <state x="370" y="174" key="run.anything.popup/46.27.1320.741@46.27.1320.741" timestamp="1602515323362" />
   </component>
 </project>

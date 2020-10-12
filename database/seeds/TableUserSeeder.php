@@ -15,26 +15,26 @@ class TableUserSeeder extends Seeder
         $users = [
             [
                 'name' => 'Admin',
-                'email' => 'admin@gmail.com',
+                'username' => '12345',
                 'password' => bcrypt('admin123'),
                 'type' => 'admin'
             ],
             [
                 'name' => 'Manager',
-                'email' => 'manager@gmail.com',
+                'username' => '6789',
                 'password' => bcrypt('manager123'),
                 'type' => 'manager'
             ],
             [
                 'name' => 'Employee',
-                'email' => 'employee@gmail.com',
+                'username' => '101112',
                 'password' => bcrypt('employee123'),
                 'type' => 'employee'
             ]
         ];
         foreach($users as $item) {
 
-            User::create($item);        
+            User::create($item);
         }
     }
 }
