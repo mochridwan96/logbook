@@ -28,15 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- SEARCH FORM -->
 
-{{--      <div class="input-group input-group-sm">--}}
-{{--        <input class="form-control form-control-navbar" @keyup="searchit" v-model="search" type="search" placeholder="Search" aria-label="Search">--}}
-{{--        <div class="input-group-append">--}}
-{{--          <button class="btn btn-navbar" @click="searchit">--}}
-{{--            <i class="fa fa-search"></i>--}}
-{{--          </button>--}}
-{{--        </div>--}}
-{{--      </div>--}}
-{{--   --}}
+
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
@@ -188,7 +180,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 @auth
-  <<script>
+  <script>
 
   window.user = @json(auth()->user())
   </script>
