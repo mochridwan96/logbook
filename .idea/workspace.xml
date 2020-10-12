@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f60dd2a-21b9-48ac-82e5-74c108754216" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategoryTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/TableUserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TableUserSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +181,7 @@
       <workItem from="1601157574143" duration="11325000" />
       <workItem from="1601207788593" duration="1365000" />
       <workItem from="1601245936887" duration="32000" />
-      <workItem from="1602497334497" duration="6756000" />
+      <workItem from="1602497334497" duration="7296000" />
     </task>
     <servers />
   </component>

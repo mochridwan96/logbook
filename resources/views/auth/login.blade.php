@@ -4,7 +4,7 @@
     <body class="login-page" style="min-height: 512.8px;">
     <div class="login-box">
         <div class="login-logo">
-            <a> PT . AEON INDONESIA </a>
+            <a> Aeon Store BSD </a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
