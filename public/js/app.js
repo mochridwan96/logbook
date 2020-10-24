@@ -2269,6 +2269,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
@@ -2986,6 +2988,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
 //
 //
 //
@@ -8210,11 +8214,7 @@ var render = function() {
                   { staticClass: "control-label", attrs: { for: "" } },
                   [_vm._v("Status")]
                 ),
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.$gate.isEmployee()) +
-                    "\n                "
-                ),
+                _vm._v(" "),
                 _c(
                   "select",
                   {
@@ -8927,6 +8927,8 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.no_return))]),
                       _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(log.suplier_name))]),
+                      _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.intruction))]),
                       _vm._v(" "),
                       _c("td", [
@@ -9078,6 +9080,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("NO IST ")]),
         _vm._v(" "),
         _c("th", [_vm._v("NO RETURN")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("SUPLIER NAME")]),
         _vm._v(" "),
         _c("th", [_vm._v("INTRUCTION")]),
         _vm._v(" "),
@@ -10344,6 +10348,8 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.no_return))]),
                       _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(log.suplier_name))]),
+                      _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.intruction))]),
                       _vm._v(" "),
                       _c("td", [
@@ -10446,6 +10452,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("NO IST ")]),
         _vm._v(" "),
         _c("th", [_vm._v("NO RETURN ")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("SUPLIER NAME")]),
         _vm._v(" "),
         _c("th", [_vm._v("INTRUCTION")]),
         _vm._v(" "),

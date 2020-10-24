@@ -155,7 +155,7 @@
             <div class="col-md-6">
                 <div class="form-group required">
                     <label class="control-label" for>Status</label>
-                    {{$gate.isEmployee()}}
+                    <!-- {{$gate.isEmployee()}} -->
                     <select
                         :disabled="$gate.isEmployee()"
                         name="no_po"
