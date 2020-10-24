@@ -27,7 +27,7 @@ class TaskUpdateRequest extends FormRequest
             'date'          => 'required',
             'description'   => 'required',
             'category_id'   => 'required | exists:categories,id',
-            'status'        => 'required'
+            // 'status'        => 'required'
         ];
     }
 }
