@@ -25,7 +25,7 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th style="width: 10px">#</th>
+                                <!-- <th style="width: 10px">#</th> -->
                                 <th>DATE</th>
                                 <th>USER</th>
                                 <th>CATEGORY</th>
@@ -46,7 +46,7 @@
                             </tr>
 
                             <tr v-for="log in log.logs.data" :key="log.id">
-                                <td>{{ log.id }}</td>
+                                <!-- <td>{{ log.id }}</td> -->
                                 <td>{{ log.date | myDate}}</td>
                                 <td>{{ log.user_name }}</td>
                                 <td>{{ log.category_name}}</td>

@@ -8913,8 +8913,6 @@ var render = function() {
                   _vm._v(" "),
                   _vm._l(_vm.log.logs.data, function(log) {
                     return _c("tr", { key: log.id }, [
-                      _c("td", [_vm._v(_vm._s(log.id))]),
-                      _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.category_name))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(_vm._f("myDate")(log.date)))]),
@@ -9067,8 +9065,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { staticStyle: { width: "10px" } }, [_vm._v("#")]),
-        _vm._v(" "),
         _c("th", [_vm._v("CATEGORY")]),
         _vm._v(" "),
         _c("th", [_vm._v("DATE")]),
@@ -10332,8 +10328,6 @@ var render = function() {
                   _vm._v(" "),
                   _vm._l(_vm.log.logs.data, function(log) {
                     return _c("tr", { key: log.id }, [
-                      _c("td", [_vm._v(_vm._s(log.id))]),
-                      _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(_vm._f("myDate")(log.date)))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.user_name))]),
@@ -10437,8 +10431,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", { staticStyle: { width: "10px" } }, [_vm._v("#")]),
-        _vm._v(" "),
         _c("th", [_vm._v("DATE")]),
         _vm._v(" "),
         _c("th", [_vm._v("USER")]),
