@@ -186,6 +186,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </script>
 
 @endauth
+<script src="/js/manifest.js"></script>
+<script src="/js/vendor.js"></script>
 <script src="/js/app.js"></script>
 </body>
 </html>
