@@ -27,7 +27,7 @@ class CreateTasksTable extends Migration
             $table->foreign('user_id')->references('id')->on('users'); // ini foreign key ke user atau relasi ke user
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
