@@ -15,20 +15,20 @@ class TableUserSeeder extends Seeder
         $users = [
             [
                 'name' => 'Admin',
-                'username' => '12345',
+                'username' => 'admin',
                 'password' => bcrypt('admin123'),
                 'type' => 'admin'
             ],
             [
                 'name' => 'Manager',
-                'username' => '6789',
+                'username' => 'manager',
                 'password' => bcrypt('manager123'),
                 'type' => 'manager'
             ],
             [
                 'name' => 'Employee',
-                'username' => '101112',
-                'password' => bcrypt('employee123'),
+                'username' => 'user',
+                'password' => bcrypt('user1234'),
                 'type' => 'employee'
             ]
         ];
