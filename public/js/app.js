@@ -2271,6 +2271,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
@@ -2988,6 +2990,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
 //
 //
 //
@@ -8917,15 +8921,17 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(_vm._f("myDate")(log.date)))]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(log.description))]),
-                      _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.no_po))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(log.no_ist))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.no_return))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.suplier_name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(log.no_ist))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(log.store_name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(log.description))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.intruction))]),
                       _vm._v(" "),
@@ -9069,15 +9075,17 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("DATE")]),
         _vm._v(" "),
-        _c("th", [_vm._v("DESCRIPTION")]),
-        _vm._v(" "),
         _c("th", [_vm._v("NO PO")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("NO IST ")]),
         _vm._v(" "),
         _c("th", [_vm._v("NO RETURN")]),
         _vm._v(" "),
         _c("th", [_vm._v("SUPLIER NAME")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("NO IST ")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("STORE NAME")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("DESCRIPTION")]),
         _vm._v(" "),
         _c("th", [_vm._v("INTRUCTION")]),
         _vm._v(" "),
@@ -10334,15 +10342,17 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.category_name))]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(log.description))]),
-                      _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.no_po))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(log.no_ist))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.no_return))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.suplier_name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(log.no_ist))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(log.store_name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(log.description))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.intruction))]),
                       _vm._v(" "),
@@ -10437,15 +10447,17 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("CATEGORY")]),
         _vm._v(" "),
-        _c("th", [_vm._v("DESCRIPTION")]),
-        _vm._v(" "),
         _c("th", [_vm._v("NO PO")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("NO IST ")]),
         _vm._v(" "),
         _c("th", [_vm._v("NO RETURN ")]),
         _vm._v(" "),
         _c("th", [_vm._v("SUPLIER NAME")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("NO IST ")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("STORE NAME")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("DESCRIPTION")]),
         _vm._v(" "),
         _c("th", [_vm._v("INTRUCTION")]),
         _vm._v(" "),

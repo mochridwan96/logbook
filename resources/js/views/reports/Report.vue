@@ -29,11 +29,12 @@
                                 <th>DATE</th>
                                 <th>USER</th>
                                 <th>CATEGORY</th>
-                                <th>DESCRIPTION</th>
                                 <th>NO PO</th>
-                                <th>NO IST </th>
                                 <th>NO RETURN </th>
                                 <th>SUPLIER NAME</th>
+                                <th>NO IST </th>
+                                <th>STORE NAME</th>
+                                <th>DESCRIPTION</th>
                                 <th>INTRUCTION</th>
                                 <th>STATUS</th>
                             </tr>
@@ -50,11 +51,12 @@
                                 <td>{{ log.date | myDate}}</td>
                                 <td>{{ log.user_name }}</td>
                                 <td>{{ log.category_name}}</td>
-                                <td>{{ log.description }}</td>
                                 <td>{{ log.no_po}}</td>
-                                <td>{{ log.no_ist }}</td>
                                 <td>{{ log.no_return }}</td>
                                 <td>{{ log.suplier_name }}</td>
+                                <td>{{ log.no_ist }}</td>
+                                <td>{{ log.store_name }}</td>
+                                <td>{{ log.description }}</td>
                                 <td>{{ log.intruction }}</td>
                                 <td>
                                     <span v-if="log.status == 'TODO'" class="badge bg-primary">{{ log.status }}</span>
