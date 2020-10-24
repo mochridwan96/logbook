@@ -2273,6 +2273,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
@@ -3091,7 +3093,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
-    this.getLogs();
+    this.getLogReports();
   },
   data: function data() {
     return {
@@ -3099,7 +3101,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       enabled: true
     };
   },
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])(["log"]), {
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])("log", {
+    log: function log(state) {
+      return state.logReports;
+    }
+  }), {
     page: {
       get: function get() {
         return this.$store.state.log.page;
@@ -3111,10 +3117,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   watch: {
     page: function page() {
-      this.getLogs();
+      this.getLogReports();
     },
     search: function search() {
-      this.getLogs(this.search);
+      this.getLogReports(this.search);
     }
   },
   methods: _objectSpread({
@@ -3125,7 +3131,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       // this.getDocumentFilter(this.search);
       this.$store.commit("log/CLEAR_FILTER");
     }
-  }, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])("log", ["getLogs", "removeLog"]), {
+  }, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])("log", ["getLogReports", "removeLog"]), {
     deleteLog: function deleteLog(id) {
       var _this = this;
 
@@ -8904,7 +8910,7 @@ var render = function() {
                     ? _c("tr", [
                         _c(
                           "th",
-                          { attrs: { colspan: "9" } },
+                          { attrs: { colspan: "12" } },
                           [
                             _c("center", [
                               _vm._v("There are no records to show")
@@ -8917,9 +8923,11 @@ var render = function() {
                   _vm._v(" "),
                   _vm._l(_vm.log.logs.data, function(log) {
                     return _c("tr", { key: log.id }, [
-                      _c("td", [_vm._v(_vm._s(log.category_name))]),
-                      _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(_vm._f("myDate")(log.date)))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(log.user_name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(log.category_name))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(log.no_po))]),
                       _vm._v(" "),
@@ -9071,9 +9079,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("CATEGORY")]),
-        _vm._v(" "),
         _c("th", [_vm._v("DATE")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("USER")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("CATEGORY")]),
         _vm._v(" "),
         _c("th", [_vm._v("NO PO")]),
         _vm._v(" "),
@@ -10319,11 +10329,11 @@ var render = function() {
               _c(
                 "tbody",
                 [
-                  _vm.log.logs.from == null
+                  _vm.log.from == null
                     ? _c("tr", [
                         _c(
                           "th",
-                          { attrs: { colspan: "9" } },
+                          { attrs: { colspan: "11" } },
                           [
                             _c("center", [
                               _vm._v("There are no records to show")
@@ -10334,7 +10344,7 @@ var render = function() {
                       ])
                     : _vm._e(),
                   _vm._v(" "),
-                  _vm._l(_vm.log.logs.data, function(log) {
+                  _vm._l(_vm.log.data, function(log) {
                     return _c("tr", { key: log.id }, [
                       _c("td", [_vm._v(_vm._s(_vm._f("myDate")(log.date)))]),
                       _vm._v(" "),
@@ -10391,14 +10401,14 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-footer" }, [
             _c("div", { staticClass: "col-md-6" }, [
-              _vm.log.logs.data
+              _vm.log.data
                 ? _c("p", [
                     _c("i", { staticClass: "fa fa-bars" }),
                     _vm._v(
                       " " +
-                        _vm._s(_vm.log.logs.data.length) +
+                        _vm._s(_vm.log.data.length) +
                         " item dari " +
-                        _vm._s(_vm.log.logs.total) +
+                        _vm._s(_vm.log.total) +
                         " total data"
                     )
                   ])
@@ -10409,11 +10419,11 @@ var render = function() {
               "div",
               { staticClass: "pull-right" },
               [
-                _vm.log.logs.data && _vm.log.logs.data.length > 0
+                _vm.log.data && _vm.log.data.length > 0
                   ? _c("b-pagination", {
                       attrs: {
-                        "total-rows": _vm.log.logs.total,
-                        "per-page": _vm.log.logs.per_page,
+                        "total-rows": _vm.log.total,
+                        "per-page": _vm.log.per_page,
                         "aria-controls": "log"
                       },
                       model: {
@@ -11499,6 +11509,9 @@ __webpack_require__.r(__webpack_exports__);
   getLogs: function getLogs(page, search) {
     return _api_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("/task?page=".concat(page, "&q=").concat(search));
   },
+  getLogReports: function getLogReports(page, search) {
+    return _api_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("/task/taskreport?page=".concat(page, "&q=").concat(search));
+  },
   getLog: function getLog(id) {
     return _api_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("/task/".concat(id));
   },
@@ -11725,6 +11738,7 @@ var namespaced = true;
 var state = {
   categories: [],
   subcategories: [],
+  logReports: [],
   logs: [],
   log: {
     id: "",
@@ -11745,6 +11759,9 @@ var state = {
 var mutations = {
   ASSIGN_DATA: function ASSIGN_DATA(state, logs) {
     state.logs = logs;
+  },
+  ASSIGN_DATA_REPORT: function ASSIGN_DATA_REPORT(state, logs) {
+    state.logReports = logs;
   },
   SET_PAGE: function SET_PAGE(state, payload) {
     state.page = payload;
@@ -11804,10 +11821,27 @@ var actions = {
       });
     });
   },
-  submitLog: function submitLog(_ref2) {
-    var dispatch = _ref2.dispatch,
-        commit = _ref2.commit,
+  getLogReports: function getLogReports(_ref2, payload) {
+    var commit = _ref2.commit,
         state = _ref2.state;
+    var search = typeof payload != "undefined" ? payload : "";
+    return new Promise(function (resolve, reject) {
+      _services_logService_js__WEBPACK_IMPORTED_MODULE_0__["default"].getLogReports(state.page, search).then(function (response) {
+        commit("ASSIGN_DATA_REPORT", response.data.result);
+        console.log(response.data.result);
+        resolve(response.data);
+      })["catch"](function (error) {
+        var notification = {
+          type: "error",
+          message: "There was a problem fetching events: " + error.message
+        }; // dispatch("notification/add", notification, { root: true });
+      });
+    });
+  },
+  submitLog: function submitLog(_ref3) {
+    var dispatch = _ref3.dispatch,
+        commit = _ref3.commit,
+        state = _ref3.state;
     return new Promise(function (resolve, reject) {
       _services_logService_js__WEBPACK_IMPORTED_MODULE_0__["default"].postLog(state.log).then(function (response) {
         dispatch("getLogs").then(function () {
@@ -11825,9 +11859,9 @@ var actions = {
       });
     });
   },
-  editLog: function editLog(_ref3, payload) {
-    var commit = _ref3.commit,
-        state = _ref3.state;
+  editLog: function editLog(_ref4, payload) {
+    var commit = _ref4.commit,
+        state = _ref4.state;
     return new Promise(function (resolve, reject) {
       _services_logService_js__WEBPACK_IMPORTED_MODULE_0__["default"].getLog(payload).then(function (response) {
         commit("ASSIGN_FORM", response.data.result);
@@ -11836,9 +11870,9 @@ var actions = {
       });
     });
   },
-  updateLog: function updateLog(_ref4, id) {
-    var state = _ref4.state,
-        commit = _ref4.commit;
+  updateLog: function updateLog(_ref5, id) {
+    var state = _ref5.state,
+        commit = _ref5.commit;
     return new Promise(function (resolve, reject) {
       _services_logService_js__WEBPACK_IMPORTED_MODULE_0__["default"].updateLog(id, state.log).then(function (response) {
         commit("CLEAR_FORM");
@@ -11851,8 +11885,8 @@ var actions = {
       });
     });
   },
-  removeLog: function removeLog(_ref5, id) {
-    var dispatch = _ref5.dispatch;
+  removeLog: function removeLog(_ref6, id) {
+    var dispatch = _ref6.dispatch;
     return new Promise(function (resolve, reject) {
       _services_logService_js__WEBPACK_IMPORTED_MODULE_0__["default"].deleteLog(id).then(function (response) {
         dispatch("getLogs").then(function () {
@@ -11861,18 +11895,18 @@ var actions = {
       });
     });
   },
-  getCategories: function getCategories(_ref6) {
-    var commit = _ref6.commit,
-        state = _ref6.state;
+  getCategories: function getCategories(_ref7) {
+    var commit = _ref7.commit,
+        state = _ref7.state;
     return new Promise(function (resolve, reject) {
       _services_logService_js__WEBPACK_IMPORTED_MODULE_0__["default"].getCategories().then(function (response) {
         commit("DATA_CATEGORIES", response.data.result);
       });
     });
   },
-  getSubCategories: function getSubCategories(_ref7) {
-    var commit = _ref7.commit,
-        state = _ref7.state;
+  getSubCategories: function getSubCategories(_ref8) {
+    var commit = _ref8.commit,
+        state = _ref8.state;
     return new Promise(function (resolve, reject) {
       _services_logService_js__WEBPACK_IMPORTED_MODULE_0__["default"].getSubCategories().then(function (response) {
         commit("DATA_SUB_CATEGORIES", response.data.result);

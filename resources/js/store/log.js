@@ -5,6 +5,7 @@ export const namespaced = true;
 export const state = {
     categories: [],
     subcategories: [],
+    logReports: [],
     logs: [],
     log: {
         id: "",
@@ -26,6 +27,9 @@ export const state = {
 export const mutations = {
     ASSIGN_DATA(state, logs) {
         state.logs = logs;
+    },
+    ASSIGN_DATA_REPORT(state, logs) {
+        state.logReports = logs;
     },
     SET_PAGE(state, payload) {
         state.page = payload;
@@ -76,6 +80,27 @@ export const actions = {
             logService.getLogs(state.page, search)
                 .then(response => {
                     commit("ASSIGN_DATA", response.data.result);
+                    console.log(response.data.result);
+                    resolve(response.data);
+                })
+                .catch(error => {
+                    const notification = {
+                        type: "error",
+                        message:
+                            "There was a problem fetching events: " +
+                            error.message
+                    };
+                    // dispatch("notification/add", notification, { root: true });
+                });
+        });
+    },
+    getLogReports({ commit, state }, payload) {
+        let search = typeof payload != "undefined" ? payload : "";
+
+        return new Promise((resolve, reject) => {
+            logService.getLogReports(state.page, search)
+                .then(response => {
+                    commit("ASSIGN_DATA_REPORT", response.data.result);
                     console.log(response.data.result);
                     resolve(response.data);
                 })

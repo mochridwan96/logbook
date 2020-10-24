@@ -31,8 +31,9 @@
                             <thead>
                             <tr>
                                 <!-- <th style="width: 10px">#</th> -->
-                                <th>CATEGORY</th>
                                 <th>DATE</th>
+                                <th>USER</th>
+                                <th>CATEGORY</th>
                                 <th>NO PO</th>
                                 <th>NO RETURN</th>
                                 <th>SUPLIER NAME</th>
@@ -46,15 +47,16 @@
                             </thead>
                             <tbody>
                             <tr v-if="log.logs.from == null" >
-                                <th colspan="9">
+                                <th colspan="12">
                                     <center>There are no records to show</center>
                                 </th>
                             </tr>
 
                             <tr v-for="log in log.logs.data" :key="log.id">
                                 <!-- <td>{{ log.id }}</td> -->
-                                <td>{{ log.category_name}}</td>
                                 <td>{{ log.date |myDate}}</td>
+                                <td>{{ log.user_name }}</td>
+                                <td>{{ log.category_name}}</td>
                                 <td>{{ log.no_po}}</td>
                                 <td>{{ log.no_return }}</td>
                                 <td>{{ log.suplier_name }}</td>

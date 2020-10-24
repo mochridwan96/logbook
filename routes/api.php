@@ -29,6 +29,7 @@ Route::group([ 'prefix' => 'v1'], function () {
 
         Route::group(['prefix' => 'task'], function () {
             Route::get('/', 'TaskController@index');
+            Route::get('/taskreport', 'TaskController@report');
             Route::get('/task-name', 'TaskController@getName');
             Route::get('/{id}', 'TaskController@getTask');
             Route::post('/', 'TaskController@create');

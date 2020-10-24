@@ -4,6 +4,9 @@ export default {
     getLogs(page, search) {
         return $axios.get(`/task?page=${page}&q=${search}`);
     },
+    getLogReports(page, search) {
+        return $axios.get(`/task/taskreport?page=${page}&q=${search}`);
+    },
     getLog(id) {
         return $axios.get(`/task/${id}`);
     },

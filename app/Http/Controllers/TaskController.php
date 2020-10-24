@@ -12,6 +12,29 @@ class TaskController extends Controller
 {
     public function index()
     {
+        $user_login = Auth::id();
+        $tasks = Task::join('categories', 'tasks.category_id', '=', 'categories.id')
+                        ->join('users', 'tasks.user_id', 'users.id')
+                        ->select('tasks.*', 'categories.name as category_name', 'users.name as user_name')
+                        ->orderBy('created_at', 'DESC')
+                        ->where('tasks.user_id', $user_login);
+
+        if (request()->q != '') {
+            $tasks = $tasks->where('tasks.description', 'LIKE', '%' . request()->q . '%');
+        }
+
+        $tasks = $tasks->paginate(100);
+        return response()->json([
+            'status'  => 'success',
+            'code'    => 200,
+            'message' => '',
+            'result'  => $tasks,
+        ], 200);
+    }
+
+    public function report()
+    {
+        $user_login = Auth::id();
         $tasks = Task::join('categories', 'tasks.category_id', '=', 'categories.id')
                         ->join('users', 'tasks.user_id', 'users.id')
                         ->select('tasks.*', 'categories.name as category_name', 'users.name as user_name')

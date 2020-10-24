@@ -40,13 +40,13 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr v-if="log.logs.from == null" >
-                                <th colspan="9">
+                            <tr v-if="log.from == null" >
+                                <th colspan="11">
                                     <center>There are no records to show</center>
                                 </th>
                             </tr>
 
-                            <tr v-for="log in log.logs.data" :key="log.id">
+                            <tr v-for="log in log.data" :key="log.id">
                                 <!-- <td>{{ log.id }}</td> -->
                                 <td>{{ log.date | myDate}}</td>
                                 <td>{{ log.user_name }}</td>
@@ -75,15 +75,15 @@
                     <!-- .card-footer -->
                     <div class="card-footer">
                         <div class="col-md-6">
-                            <p v-if="log.logs.data"><i class="fa fa-bars"></i> {{ log.logs.data.length }} item dari {{ log.logs.total }} total data</p>
+                            <p v-if="log.data"><i class="fa fa-bars"></i> {{ log.data.length }} item dari {{ log.total }} total data</p>
                         </div>
                         <div class="pull-right">
                             <b-pagination
                                 v-model="page"
-                                :total-rows="log.logs.total"
-                                :per-page="log.logs.per_page"
+                                :total-rows="log.total"
+                                :per-page="log.per_page"
                                 aria-controls="log"
-                                v-if="log.logs.data && log.logs.data.length > 0"
+                                v-if="log.data && log.data.length > 0"
                             ></b-pagination>
                         </div>
 
@@ -101,7 +101,7 @@
 import { mapState, mapActions } from "vuex";
 export default {
     created() {
-        this.getLogs();
+        this.getLogReports();
     },
     data() {
         return {
@@ -110,7 +110,9 @@ export default {
         };
     },
     computed: {
-        ...mapState(["log"]),
+        ...mapState("log", {
+            log: state => state.logReports 
+        }),
 
         page: {
             get() {
@@ -123,10 +125,10 @@ export default {
     },
     watch: {
         page() {
-            this.getLogs();
+            this.getLogReports();
         },
         search() {
-            this.getLogs(this.search);
+            this.getLogReports(this.search);
         },
     },
     methods: {
@@ -138,7 +140,7 @@ export default {
             this.$store.commit("log/CLEAR_FILTER");
         },
         ...mapActions("log", [
-            "getLogs",
+            "getLogReports",
             "removeLog"
         ]),
         deleteLog(id) {
