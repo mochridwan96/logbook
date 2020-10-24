@@ -93,7 +93,7 @@ class TaskController extends Controller
         $task->suplier_name    = $request->suplier_name;
         $task->store_name    = $request->store_name;
         $task->intruction   = $request->intruction;
-        $task->user_id      = Auth::id();
+        // $task->user_id      = Auth::id();
         $task->status       = $request->status;
         $task->save();
 
