@@ -8070,50 +8070,48 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm.log.category_id == 1
-              ? _c("div", { staticClass: "col-md-6" }, [
-                  _c("div", { staticClass: "form-group required" }, [
-                    _c(
-                      "label",
-                      { staticClass: "control-label", attrs: { for: "" } },
-                      [_vm._v("Nama Suplier")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.log.suplier_name,
-                          expression: "log.suplier_name"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      class: { "is-invalid": _vm.errors.suplier_name },
-                      attrs: {
-                        disabled: _vm.$gate.isManager(),
-                        type: "text",
-                        placeholder: "Masukan Nama Suplier"
-                      },
-                      domProps: { value: _vm.log.suplier_name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.log, "suplier_name", $event.target.value)
-                        }
+            _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "form-group required" }, [
+                _c(
+                  "label",
+                  { staticClass: "control-label", attrs: { for: "" } },
+                  [_vm._v("Nama Suplier")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.log.suplier_name,
+                      expression: "log.suplier_name"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  class: { "is-invalid": _vm.errors.suplier_name },
+                  attrs: {
+                    disabled: _vm.$gate.isManager(),
+                    type: "text",
+                    placeholder: "Masukan Nama Suplier"
+                  },
+                  domProps: { value: _vm.log.suplier_name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
                       }
-                    }),
-                    _vm._v(" "),
-                    _vm.errors.suplier_name
-                      ? _c("p", { staticClass: "text-danger" }, [
-                          _vm._v(_vm._s(_vm.errors.suplier_name[0]))
-                        ])
-                      : _vm._e()
-                  ])
-                ])
-              : _vm._e(),
+                      _vm.$set(_vm.log, "suplier_name", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm.errors.suplier_name
+                  ? _c("p", { staticClass: "text-danger" }, [
+                      _vm._v(_vm._s(_vm.errors.suplier_name[0]))
+                    ])
+                  : _vm._e()
+              ])
+            ]),
             _vm._v(" "),
             _vm.log.category_id != 1
               ? _c("div", { staticClass: "col-md-6" }, [
@@ -8564,49 +8562,44 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm.log.category_id == 1
-              ? _c("div", { staticClass: "col-md-6" }, [
-                  _c("div", { staticClass: "form-group required" }, [
-                    _c(
-                      "label",
-                      { staticClass: "control-label", attrs: { for: "" } },
-                      [_vm._v("Nama Suplier")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.log.suplier_name,
-                          expression: "log.suplier_name"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      class: { "is-invalid": _vm.errors.suplier_name },
-                      attrs: {
-                        type: "text",
-                        placeholder: "Masukan Nama Suplier"
-                      },
-                      domProps: { value: _vm.log.suplier_name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.log, "suplier_name", $event.target.value)
-                        }
+            _c("div", { staticClass: "col-md-6" }, [
+              _c("div", { staticClass: "form-group required" }, [
+                _c(
+                  "label",
+                  { staticClass: "control-label", attrs: { for: "" } },
+                  [_vm._v("Nama Suplier")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.log.suplier_name,
+                      expression: "log.suplier_name"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  class: { "is-invalid": _vm.errors.suplier_name },
+                  attrs: { type: "text", placeholder: "Masukan Nama Suplier" },
+                  domProps: { value: _vm.log.suplier_name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
                       }
-                    }),
-                    _vm._v(" "),
-                    _vm.errors.suplier_name
-                      ? _c("p", { staticClass: "text-danger" }, [
-                          _vm._v(_vm._s(_vm.errors.suplier_name[0]))
-                        ])
-                      : _vm._e()
-                  ])
-                ])
-              : _vm._e(),
+                      _vm.$set(_vm.log, "suplier_name", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm.errors.suplier_name
+                  ? _c("p", { staticClass: "text-danger" }, [
+                      _vm._v(_vm._s(_vm.errors.suplier_name[0]))
+                    ])
+                  : _vm._e()
+              ])
+            ]),
             _vm._v(" "),
             _vm.log.category_id != 1
               ? _c("div", { staticClass: "col-md-6" }, [

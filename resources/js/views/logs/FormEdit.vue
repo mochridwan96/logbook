@@ -99,7 +99,7 @@
                     <p class="text-danger" v-if="errors.no_return">{{ errors.no_return[0] }}</p>
                 </div>
             </div>
-            <div class="col-md-6"  v-if="log.category_id == 1">
+            <div class="col-md-6"  >
                 <div class="form-group required">
                     <label for class="control-label">Nama Suplier</label>
                     <input
