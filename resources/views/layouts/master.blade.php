@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Aeon Store BSD</title>
+  <title>LogBook MMD | AEON Store BSD</title>
 
 
   <link rel="stylesheet" href="/css/app.css">
@@ -43,7 +43,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <a href="/" class="brand-link">
       <img src="/img/logo2.png" alt="LaraSrart Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Aeon Store BSD</span>
+      <span class="brand-text font-weight-light">LogBook MMD | AEON Store BSD</span>
     </a>
 
     <!-- Sidebar -->

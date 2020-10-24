@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">
 
-                        <h3 class="card-title" v-show="!$gate.isManager()" >
+                        <h3 class="card-title" v-show="!$gate.isManager() && !$gate.isAdmin()" >
                             <router-link :to="{ name: 'logs.add' }" class="btn btn-primary lg">
                                 <i class="fas fa-plus"></i>
                                 Tambah

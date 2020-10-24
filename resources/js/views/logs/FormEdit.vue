@@ -133,6 +133,7 @@
                 <div class="form-group required">
                     <label for class="control-label">Intruksi Atasan</label>
                     <textarea
+                     :disabled="$gate.isEmployee()"
                         type="text"
                         class="form-control"
                         v-model="log.intruction"
@@ -147,6 +148,7 @@
                 <div class="form-group required">
                     <label class="control-label" for>Status</label>
                     <select
+                     :disabled="$gate.isEmployee()"
                         name="no_po"
                         v-model="log.status"
                         class="form-control"
