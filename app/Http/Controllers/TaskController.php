@@ -12,14 +12,22 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $user_login = Auth::id();
-        $tasks = Task::join('categories', 'tasks.category_id', '=', 'categories.id')
+        $user_login = Auth::user();
+        \Log::alert($user_login);
+        $tasks = '';
+        if($user_login->type === 'manager') {
+            $tasks = Task::join('categories', 'tasks.category_id', '=', 'categories.id')
+                        ->join('users', 'tasks.user_id', 'users.id')
+                        ->select('tasks.*', 'categories.name as category_name', 'users.name as user_name')
+                        ->orderBy('created_at', 'DESC');    
+        }else{
+            $tasks = Task::join('categories', 'tasks.category_id', '=', 'categories.id')
                         ->join('users', 'tasks.user_id', 'users.id')
                         ->select('tasks.*', 'categories.name as category_name', 'users.name as user_name')
                         ->orderBy('created_at', 'DESC')
-                        ->where('tasks.user_id', $user_login)
-                        ->where('users.type', 'manager')
-                        ;
+                        ->where('tasks.user_id', $user_login->id);
+        }
+
 
         if (request()->q != '') {
             $tasks = $tasks->where('tasks.description', 'LIKE', '%' . request()->q . '%');
@@ -94,7 +102,7 @@ class TaskController extends Controller
             'store_name' => $request->store_name,
             'intruction' => $request->intruction,
             'user_id' => $user_login,
-            'status' => $request->status
+            'status' => 'TODO'
         ]);
 
         return response()->json([
