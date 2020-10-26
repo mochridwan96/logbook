@@ -5869,7 +5869,7 @@ var render = function() {
                       on: { click: _vm.newModal }
                     },
                     [
-                      _vm._v("Add New\n                    "),
+                      _vm._v("Add New\n                        "),
                       _c("i", { staticClass: "fas fa-user-plus fa-fw " })
                     ]
                   )
@@ -5913,7 +5913,7 @@ var render = function() {
                               [_c("i", { staticClass: "fa fa-edit blue" })]
                             ),
                             _vm._v(
-                              "\n                    /\n                    "
+                              "\n                        /\n                        "
                             ),
                             _c(
                               "a",
@@ -6100,44 +6100,6 @@ var render = function() {
                         _vm._v(" "),
                         _c("has-error", {
                           attrs: { form: _vm.form, field: "email" }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "form-group" },
-                      [
-                        _c("textarea", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.form.bio,
-                              expression: "form.bio"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          class: { "is-invalid": _vm.form.errors.has("bio") },
-                          attrs: {
-                            name: "bio",
-                            id: "bio",
-                            placeholder: "Short bio for user (Optional)"
-                          },
-                          domProps: { value: _vm.form.bio },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(_vm.form, "bio", $event.target.value)
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("has-error", {
-                          attrs: { form: _vm.form, field: "bio" }
                         })
                       ],
                       1

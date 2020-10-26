@@ -142,9 +142,13 @@ class UserController extends Controller
 
         $this->validate($request,[
             'name'  => 'required|string|max:191',
-            'username' => 'required|string|max:191|unique:users,username,'.$user->id,
+            // 'username' => 'required|string|max:191|unique:users,username',
             'password'=>'sometimes|string|min:8'
         ]);
+
+        if(!empty($request->password)){
+            $request->merge(['password'=>Hash::make($request ['password'])]);
+        }
 
         $user->update($request->all());
         return ['message','Update  the user info'];
