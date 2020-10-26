@@ -17,7 +17,9 @@ class TaskController extends Controller
                         ->join('users', 'tasks.user_id', 'users.id')
                         ->select('tasks.*', 'categories.name as category_name', 'users.name as user_name')
                         ->orderBy('created_at', 'DESC')
-                        ->where('tasks.user_id', $user_login);
+                        ->where('tasks.user_id', $user_login)
+                        ->where('users.type', 'manager')
+                        ;
 
         if (request()->q != '') {
             $tasks = $tasks->where('tasks.description', 'LIKE', '%' . request()->q . '%');
