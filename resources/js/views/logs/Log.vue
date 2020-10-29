@@ -72,7 +72,7 @@
                                 </td>
 
                                 <td>
-                                    <span v-if="log.user_id == $gate.isIdEmployee() || $gate.isIdAdmin() == 1 || $gate.isIdManager() == 2 ">
+                                    <span v-if="log.type == $gate.isIdEmployee() || $gate.isIdAdmin() == 'admin' || $gate.isIdManager() == 'manager' ">
 
                                     <router-link
                                         :to="{ name: 'logs.edit', params: {id: log.id} }">
@@ -80,7 +80,7 @@
                                     </router-link>
                                     </span>
 
-                                    <span v-if="log.user_id == $gate.isIdEmployee() || $gate.isIdAdmin() == 1">
+                                    <span v-if="log.type == $gate.isIdEmployee() || $gate.isIdAdmin() == 'admin'">
                                             <a v-show="!$gate.isManager()"  href="#" @click="deleteLog(log.id)">
                                                 <i class="fa fa-trash red"></i>
                                             </a>

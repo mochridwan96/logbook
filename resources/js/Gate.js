@@ -10,7 +10,7 @@ export default class Gate{
     }
 
     isIdAdmin(){
-        const id = this.user.id
+        const id = this.user.type
         return  id;
     }
 
@@ -19,7 +19,7 @@ export default class Gate{
     }
 
     isIdEmployee(){
-        const id = this.user.id
+        const id = this.user.type
         return  id;
     }
 
@@ -28,7 +28,7 @@ export default class Gate{
     }
 
     isIdManager(){
-        const id = this.user.id
+        const id = this.user.type
         return  id;
     }
 

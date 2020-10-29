@@ -18,12 +18,12 @@ class TaskController extends Controller
         if($user_login->type === 'manager') {
             $tasks = Task::join('categories', 'tasks.category_id', '=', 'categories.id')
                         ->join('users', 'tasks.user_id', 'users.id')
-                        ->select('tasks.*', 'categories.name as category_name', 'users.name as user_name')
+                        ->select('tasks.*', 'categories.name as category_name', 'users.name as user_name', 'users.type')
                         ->orderBy('created_at', 'DESC');    
         }else{
             $tasks = Task::join('categories', 'tasks.category_id', '=', 'categories.id')
                         ->join('users', 'tasks.user_id', 'users.id')
-                        ->select('tasks.*', 'categories.name as category_name', 'users.name as user_name')
+                        ->select('tasks.*', 'categories.name as category_name', 'users.name as user_name', 'users.type')
                         ->orderBy('created_at', 'DESC')
                         ->where('tasks.user_id', $user_login->id);
         }

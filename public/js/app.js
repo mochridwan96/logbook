@@ -8932,9 +8932,9 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        log.user_id == _vm.$gate.isIdEmployee() ||
-                        _vm.$gate.isIdAdmin() == 1 ||
-                        _vm.$gate.isIdManager() == 2
+                        log.type == _vm.$gate.isIdEmployee() ||
+                        _vm.$gate.isIdAdmin() == "admin" ||
+                        _vm.$gate.isIdManager() == "manager"
                           ? _c(
                               "span",
                               [
@@ -8955,8 +8955,8 @@ var render = function() {
                             )
                           : _vm._e(),
                         _vm._v(" "),
-                        log.user_id == _vm.$gate.isIdEmployee() ||
-                        _vm.$gate.isIdAdmin() == 1
+                        log.type == _vm.$gate.isIdEmployee() ||
+                        _vm.$gate.isIdAdmin() == "admin"
                           ? _c("span", [
                               _c(
                                 "a",
@@ -10477,7 +10477,7 @@ function () {
   }, {
     key: "isIdAdmin",
     value: function isIdAdmin() {
-      var id = this.user.id;
+      var id = this.user.type;
       return id;
     }
   }, {
@@ -10488,7 +10488,7 @@ function () {
   }, {
     key: "isIdEmployee",
     value: function isIdEmployee() {
-      var id = this.user.id;
+      var id = this.user.type;
       return id;
     }
   }, {
@@ -10499,7 +10499,7 @@ function () {
   }, {
     key: "isIdManager",
     value: function isIdManager() {
-      var id = this.user.id;
+      var id = this.user.type;
       return id;
     }
   }, {
